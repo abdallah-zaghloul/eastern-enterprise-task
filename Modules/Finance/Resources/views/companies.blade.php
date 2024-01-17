@@ -60,7 +60,7 @@
 
                         <div class="d-block justify-content-between p-3">
                             <!-- Show Details -->
-                            <form method="GET" target="_blank" action="">
+                            <form method="GET" target="_blank" action="{{route('companies.show', ['id'=> $company->id])}}">
 
                                 <small>
                                     <button class="btn-sm btn btn-primary mb-1" type="submit">Show Details</button>

@@ -43,4 +43,15 @@ class CompanyController extends Controller
         return redirect()->route('finance');
     }
 
+
+    /**
+     * @param string $id
+     * @return Renderable
+     */
+    public function show(string $id): Renderable
+    {
+        $company = $this->companyService->show($id);
+        return view('finance::show-company', compact('company'));
+    }
+
 }

@@ -22,4 +22,5 @@ Route::group([
 ],function (){
     Route::get('create', [CompanyController::class, 'create'])->name('create')->middleware('auth:web');
     Route::post('store', [CompanyController::class, 'store'])->name('store')->middleware('auth:web');
+    Route::get('show/{id}', [CompanyController::class, 'show'])->name('show');
 });

@@ -30,4 +30,15 @@ class CompanyService
         return $this->companyRepository->create($request->validated());
     }
 
+    public function show(string $id)
+    {
+        $company = $this->companyRepository->find($id);
+
+        /**
+         * in case of realtime api data
+         * we can use also guzzle Client and pass it to the constructor
+        */
+//        return Http::send(method: 'given method', url: 'given url', options: [$company->{'data'}]);
+        return $company;
+    }
 }
