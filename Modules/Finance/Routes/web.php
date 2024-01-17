@@ -13,6 +13,4 @@ use Modules\Finance\Http\Controllers\FinanceController;
 |
 */
 
-Route::group([], function () {
-    Route::get('/', [FinanceController::class, 'index'])->name('finance');
-});
+Route::get('/', [FinanceController::class, 'index'])->name('finance');

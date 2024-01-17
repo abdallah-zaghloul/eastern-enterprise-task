@@ -3,6 +3,7 @@
 namespace Modules\Finance\Providers;
 use Livewire\Livewire;
 use Illuminate\Support\ServiceProvider;
+use Modules\Finance\Components\Companies;
 
 class LivewireServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,6 @@ class LivewireServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        Livewire::component('finance::companies', Companies::class);
     }
 }
