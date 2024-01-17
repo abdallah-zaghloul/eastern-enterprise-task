@@ -2,6 +2,12 @@
 @section('content')
     <div class="container">
 
+        <!-- Create Company -->
+        @auth('web')
+            <form method="GET" action="{{route('companies.create')}}">
+                <button class="btn btn-dark ms-3"> Create Company</button>
+            </form>
+        @endauth
 
         <div class="row justify-content-center">
 

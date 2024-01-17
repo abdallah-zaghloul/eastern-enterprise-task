@@ -24,4 +24,10 @@ class CompanyService
             ->cursorPaginate(request()->getPaginationCount())
             ->appends(request()->query());
     }
+
+    public function store(StoreCompanyRequest $request)
+    {
+        return $this->companyRepository->create($request->validated());
+    }
+
 }

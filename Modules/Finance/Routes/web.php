@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Finance\Http\Controllers\CompanyController;
 use Modules\Finance\Http\Controllers\FinanceController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +16,10 @@ use Modules\Finance\Http\Controllers\FinanceController;
 */
 
 Route::get('/', [FinanceController::class, 'index'])->name('finance');
+
+Route::group([
+    'as'=> 'companies.',
+],function (){
+    Route::get('create', [CompanyController::class, 'create'])->name('create')->middleware('auth:web');
+    Route::post('store', [CompanyController::class, 'store'])->name('store')->middleware('auth:web');
+});
